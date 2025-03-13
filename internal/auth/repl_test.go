@@ -15,7 +15,7 @@ func TestGetAPIKey(t *testing.T) {
 	}{
 		"first":  {input: "ApiKey thisismykey", sep: " ", want: []string{"thisismykey"}},
 		"second": {input: "ApiKey isthismykey", sep: " ", want: []string{"isthismykey"}},
-		"third":  {input: "ApiKey whoknowsifthisismykey", sep: " ", want: []string{"whoknowsifthisismykey"}},
+		"third":  {input: "ApiKey whoknowsifthisismyey", sep: " ", want: []string{"whoknowsifthisismykey"}},
 	}
 
 	for name, testcase := range tests {
