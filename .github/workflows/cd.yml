@@ -28,7 +28,7 @@ jobs:
         run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
       - name: migrateup database
-        run: ./migrateup.sh
+        run: ./scripts/migrateup.sh
 
       - name: Run script
         run: scripts/buildprod.sh
