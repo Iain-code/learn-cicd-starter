@@ -27,8 +27,8 @@ jobs:
       - name: Add goose to PATH
         run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
-      - name: migrateup.sh
-        run: goose -dir sql/schema turso "$DATABASE_URL" up
+      - name: migrateup database
+        run: ./migrateup.sh
 
       - name: Run script
         run: scripts/buildprod.sh
