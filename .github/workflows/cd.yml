@@ -5,8 +5,8 @@ on:
     branches: [main]
 
 jobs:
-  Deployment:
-    name: Deploy
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
 
     env:
@@ -27,7 +27,7 @@ jobs:
       - name: Add goose to PATH
         run: echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
-      - name: Migrate to database
+      - name: migrateup.sh
         run: goose -dir sql/schema turso "$DATABASE_URL" up
 
       - name: Run script
