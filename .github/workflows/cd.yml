@@ -19,6 +19,9 @@ jobs:
       - name: Install goose
         run: go install github.com/pressly/goose/v3/cmd/goose@latest
 
+      - name: Add goose to PATH
+        run: echo "${{ runner.tool_cache }}/go/bin" >> $GITHUB_PATH
+
       - name: Migrate to database
         run: goose -dir ./sql/schema $DATABASE_URL up
     
